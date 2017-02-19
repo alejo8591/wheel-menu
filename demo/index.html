@@ -2,19 +2,15 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>jQuery Wheel Menu by Pete R. | The Pete Design</title>
-	<meta name="title" content="jQuery Wheel Menu by Pete R. | The Pete Design" />
 	<meta name="description" content="Add a fully customizable Path-like wheel menu button to your website. Created by Pete R., Founder of BucketListly" />
 	<link rel="image_src" href="http://www.thepetedesign.com/images/wheelmenu_image.png" />
 
 	<meta content="http://www.thepetedesign.com/demos/jquery_wheelmenu_demo.html" property="og:url" />
 	<meta content="http://www.thepetedesign.com/images/wheelmenu_image.png" property="og:image" />
 	
-	<meta name="author" content="Pete R.">
-	<link rel="canonical" href="http://www.thepetedesign.com/demos/jquery_wheelmenu_demo.html" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="jquery.wheelmenu.js"></script>
+  <script type="text/javascript" src="../dist/js/jquery.wheelmenu.min.js"></script>
   <style>
     html {
       height: 100%;
@@ -28,19 +24,19 @@
       margin: 0;
       height: 100%;
     }
-    
+
     .wrapper {
     	height: auto !important;
     	height: 100%;
-    	margin: 0 auto; 
+    	margin: 0 auto;
     	overflow: hidden;
     }
-    
+
     a {
       text-decoration: none;
     }
-    
-    
+
+
     h1, h2 {
       width: 100%;
       float: left;
@@ -56,7 +52,7 @@
       margin-top: 0;
       margin-bottom: 10px;
     }
-    
+
     .pointer {
       color: #34495e;
       font-family: 'Pacifico', cursive;
@@ -68,7 +64,7 @@
       line-height: 35px;
       font-weight: bold;
       font-size: 36px;
-      background: #df4727; 
+      background: #df4727;
       padding: 10px 11px;
       text-align: center;
       border-radius: 50px;
@@ -83,10 +79,10 @@
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
     }
 
-    .wheel-button:hover{ 
+    .wheel-button:hover{
       color: white;
     }
-    
+
     .wheel-button.ne {
       border-color: white;
       background: #1ABC9C;
@@ -95,7 +91,7 @@
       bottom: 10px;
       left: 10px;
     }
-    
+
     .wheel-button.nw {
       border-color: white;
       background-color: #E67E22;
@@ -148,7 +144,7 @@
       width: 100%;
       margin: 0 auto;
     }
-    
+
     .reload, .btn{
       display: inline-block;
       border: 4px solid #FFF;
@@ -193,7 +189,7 @@
       font-weight: bold;
     }
 	</style>
-	<link rel="stylesheet" type="text/css" href="wheelmenu.css" />
+	<link rel="stylesheet" type="text/css" href="../dist/css/wheelmenu.min.css" />
 	<script>
 	  $(document).ready(function(){
 			$(".wheel-button").wheelmenu({
@@ -207,9 +203,6 @@
 </head>
 <body>
   <div class="wrapper">
-    <h1>jQuery Wheel Menu by Pete R.</h1>
-    <h2>Add a fully customisable Path-like wheel menu button to your website</h2>
-    <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
 	  <div class="main">
 	    <a href="#wheel" class="wheel-button">
 	     <span>+</span>
@@ -227,9 +220,6 @@
         <li class="item"><a href="#home">I</a></li>
         <li class="item"><a href="#home">J</a></li>
       </ul>
-      <div class="btns">
-        <a class="reload btn" href="https://github.com/peachananr/wheel-menu">Download on Github</a>
-      </div>
       
       <a href="#wheel2" class="wheel-button ne">
 		   <span>+</span>
@@ -251,7 +241,6 @@
         <li class="item"><a href="#home">D</a></li>
       </ul>
     </div>
-    <a href="https://github.com/peachananr/wheel-menu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   </div>
 </body>
 </html>

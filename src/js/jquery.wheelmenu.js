@@ -1,15 +1,3 @@
-/* ===========================================================
- * jquery-wheelmenu.js v1
- * ===========================================================
- * Copyright 2013 Pete Rojwongsuriya.
- * http://www.thepetedesign.com
- *
- * A small jQuery plugin that adds a beautiful
- * Path-like menu button to your website
- * https://github.com/peachananr/wheel-menu
- *
- * ========================================================== */
-
 !function($){
   
   var defaults = {
@@ -30,7 +18,7 @@
     this.css("top", buttonY  - (this.outerHeight() / 2)  + "px");
     this.css("left", buttonX - (this.outerWidth() / 2)   + "px");
     return this;
-  }
+  };
   
   $.fn.flyIn = function (el, button, width, height, angle, step, radius, settings) {
     var d = 0;
@@ -53,7 +41,7 @@
       }, settings.animationSpeed[1]);
       d += settings.animationSpeed[0];
     });
-  }
+  };
   
   $.fn.flyOut = function (el, button) {
     var d = 0;
@@ -67,9 +55,9 @@
       d += 15;
 	  }).promise().done( function() {
       el.removeClass("active").css("visibility", "hidden").hide();
-      button.removeClass("active")
+      button.removeClass("active");
     });
-  }
+  };
   
   $.fn.fadeInIcon = function (el, button, width, height, angle, step, radius, settings) {
     var d = 0;
@@ -87,7 +75,7 @@
       
       d += settings.animationSpeed[0];
     });
-  }
+  };
   
   $.fn.fadeOutIcon = function (el, button) {
     var d = 0;
@@ -98,24 +86,24 @@
       d += 15;
 	  }).promise().done( function() {
       el.removeClass("active").css("visibility", "hidden").hide();
-      button.removeClass("active")
+      button.removeClass("active");
     });
-  }
+  };
 	
 	$.fn.hideIcon = function (button, settings) {
 	  var fields = this.find(".item"),
 	      el = this;
 	  switch (settings.animation) { 
       case 'fade': 
-        fields.fadeOutIcon(el, button)
+        fields.fadeOutIcon(el, button);
         break; 
     
       case 'fly': 
-        fields.flyOut(el, button)
+        fields.flyOut(el, button);
         break; 
     }
 	  
-	}
+	};
 	
 	$.fn.showIcon = function (button, settings) {
 	  var el = this,
@@ -126,18 +114,17 @@
 	  button.addClass("active").css({
       'z-index': zindex
     });
-    
-    
-    
-	  el.show().css({
+
+    el.show().css({
         position: 'absolute',
         'z-index': '5',
         'padding': '30px' // add safe zone for mouseover
-    }).centerAround(button); 
+    }).centerAround(button);
+
     el.addClass("wheel active").css("visibility", "visible").show();
 	  
 	  if (el.attr('data-angle')) {
-      settings.angle = el.attr('data-angle')
+      settings.angle = el.attr('data-angle');
     }
     
     settings = predefineAngle(settings);
@@ -152,15 +139,14 @@
      
       switch (settings.animation) { 
         case 'fade': 
-          fields.fadeInIcon(el, button, width, height, angle, step, radius, settings)
+          fields.fadeInIcon(el, button, width, height, angle, step, radius, settings);
           break; 
           
         case 'fly': 
-          fields.flyIn(el, button, width, height, angle, step, radius, settings)
+          fields.flyIn(el, button, width, height, angle, step, radius, settings);
           break; 
       }
-    
-	}
+	};
 	
 	$.fn.animateRotate = function(angle, duration, easing, complete) {
       return this.each(function() {
@@ -177,48 +163,48 @@
               complete: complete || $.noop
           });
       });
-  };
+    };
   
 	
 	function predefineAngle (settings) {
-	  var convert = false
-	  if ($.type(settings.angle) == "string") {
+	  var convert = false;
+	  if ($.type(settings.angle) === 'string') {
 	    try {
-        if (eval(settings.angle).length > 1) convert = true
-      }
-      catch(err) {
-        convert = false
-      }
-	    if (convert == true) {
+            if(eval(settings.angle).length > 1) convert = true;
+        }
+        catch(err) {
+            convert = false;
+        }
+	    if (convert === true) {
 	      settings.angle = JSON.parse(settings.angle);
 	    } else {
 	      switch (settings.angle) { 
-          case 'N':
-            settings.angle = [180,380]
+              case 'N':
+            settings.angle = [180,380];
             break;
-          case 'NE':
-            settings.angle = [270,380]
+              case 'NE':
+            settings.angle = [270,380];
             break;
-          case 'E':
-            settings.angle = [270,470]
+              case 'E':
+            settings.angle = [270,470];
             break;
-          case 'SE':
-            settings.angle = [360,470]
+              case 'SE':
+            settings.angle = [360,470];
             break;
-          case 'S':
-            settings.angle = [360,560]
+              case 'S':
+            settings.angle = [360,560];
             break;
-          case 'SW':
-            settings.angle = [90,200]
+              case 'SW':
+            settings.angle = [90,200];
             break;
-          case 'W':
-            settings.angle = [90,290]
+              case 'W':
+            settings.angle = [90,290];
             break;
           case 'NW':
-            settings.angle = [180,290]
+            settings.angle = [180,290];
             break;
           case 'all':
-            settings.angle = [0,360]
+            settings.angle = [0,360];
             break;
         }
 	    } 
@@ -228,20 +214,20 @@
 	
 	function predefineSpeed(settings) {
 	  if ($.type(settings.animationSpeed) == "string") { 
-      switch (settings.animationSpeed) { 
-        case 'slow':
-          settings.animationSpeed = [75,700]
-          break;
-        case 'medium':
-          settings.animationSpeed = [50,500]
-          break;
-        case 'fast':
-          settings.animationSpeed = [25,250]
-          break;
-        case 'instant':
-          settings.animationSpeed = [0,0]
-          break;
-      }
+          switch (settings.animationSpeed) {
+            case 'slow':
+              settings.animationSpeed = [75,700];
+              break;
+            case 'medium':
+              settings.animationSpeed = [50,500];
+              break;
+            case 'fast':
+              settings.animationSpeed = [25,250];
+              break;
+            case 'instant':
+              settings.animationSpeed = [0,0];
+              break;
+          }
     }
     return settings;
 	}
@@ -252,13 +238,14 @@
     settings = predefineSpeed(settings);
     
     return this.each(function(){
-      var button = $(this)
+      var button = $(this);
       var el = $($(this).attr("href"));
       el.addClass("wheel");
       
       button.css("opacity", 0).animate({
         opacity: 1
-      })
+      });
+
       if (settings.trigger == "hover") {
 
         button.bind({
@@ -283,8 +270,6 @@
         });
       }
     });
-  }
+  };
   
 }(window.jQuery);
-
-
